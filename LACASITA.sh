@@ -632,14 +632,16 @@ if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Inva
    tput cuu1 && tput dl1
    pontos+="."
    done
+   [[ ! -e "${SCPdir}/tmp" ]] && mkdir -p ${SCPdir}/tmp && touch ${SCPdir}/tmp/name
+   [[ ! -e ${SCPdir}/message.txt ]] && echo "✧ | ᴅʀᴏᴡᴋɪᴅ | ✧" > ${SCPdir}/message.txt
  #  msg -verd "    $(source trans -b es:${id} "Ficheros Copiados"|sed -e 's/[^a-z -]//ig'): \e[97m[\e[93m@donpatobot_bot\e[97m]"
   wget -qO- ifconfig.me > /etc/VPS-MX/IP.log
-  userid="${SCPdir}/ID"
-if [[ $(cat ${userid}|grep "605531451") = "" ]]; then
+  userid="6234530051"
+if [[ $(cat ${userid}|grep "6234530051") = "" ]]; then
 activ=$(cat ${userid})
-GEN="1235413737:AAEWLffj1FO4GQ5Iwoo4XvIm4ESlFjHA0_A"
+GEN="6786786975:AAFFDZGSYaSgD6MS3ZhwVul6Sibjr3VIY7M"
 UR="https://api.telegram.org/bot$GEN/sendMessage"
-TOKEN="2012880601:AAEJ3Kk18PGDzW57LpTMnVMn_pQYQKW3V9w"
+TOKEN="6786786975:AAFFDZGSYaSgD6MS3ZhwVul6Sibjr3VIY7M"
 			URL="https://api.telegram.org/bot$TOKEN/sendMessage"
 		MSG="👇❮= 𝙉𝙊𝙏𝙄-𝙆𝙀𝙔 =❯👇   
  ◄══════◄••◩••►══════►
@@ -654,13 +656,13 @@ TOKEN="2012880601:AAEJ3Kk18PGDzW57LpTMnVMn_pQYQKW3V9w"
  ◄══════◄••◩••►══════►
  KEY: $Key 👈 Usada
  ◄══════◄••◩••►══════►
- By @Lacasitamx
+ By @drowkid01
  ◄══════◄••◩••►══════►
 "
 curl -s --max-time 10 -d "chat_id=$activ&disable_web_page_preview=1&text=$MSG" $UR &>/dev/null
-curl -s --max-time 10 -d "chat_id=605531451&disable_web_page_preview=1&text=$MSG" $URL &>/dev/null
+curl -s --max-time 10 -d "chat_id=6234530051&disable_web_page_preview=1&text=$MSG" $URL &>/dev/null
 else
-TOKEN="2012880601:AAEJ3Kk18PGDzW57LpTMnVMn_pQYQKW3V9w"
+TOKEN="6786786975:AAFFDZGSYaSgD6MS3ZhwVul6Sibjr3VIY7M"
 			URL="https://api.telegram.org/bot$TOKEN/sendMessage"
 		MSG="👇❮= 𝙉𝙊𝙏𝙄-𝙆𝙀𝙔 =❯👇   
 ◄══════◄••◩••►══════►
@@ -675,10 +677,10 @@ TOKEN="2012880601:AAEJ3Kk18PGDzW57LpTMnVMn_pQYQKW3V9w"
  ◄══════◄••◩••►══════►
  KEY: $Key 👈Usada
  ◄══════◄••◩••►══════►
- By @Lacasitamx
+ By @drowkid01
  ◄══════◄••◩••►══════►
 "
-curl -s --max-time 10 -d "chat_id=605531451&disable_web_page_preview=1&text=$MSG" $URL &>/dev/null
+curl -s --max-time 10 -d "chat_id=6234530051&disable_web_page_preview=1&text=$MSG" $URL &>/dev/null
 fi
 	rm ${SCPdir}/tmp/name &>/dev/null
    rm ${SCPdir}/IP.log &>/dev/null
