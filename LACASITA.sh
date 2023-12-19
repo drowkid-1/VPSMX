@@ -632,11 +632,14 @@ if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Inva
    tput cuu1 && tput dl1
    pontos+="."
    done
-   [[ ! -e "${SCPdir}/tmp" ]] && mkdir -p ${SCPdir}/tmp && touch ${SCPdir}/tmp/name
+   [[ ! -e "${SCPdir}/tmp" ]] && mkdir -p ${SCPdir}/tmp && echo > ${SCPdir}/tmp/name
    [[ ! -e ${SCPdir}/message.txt ]] && echo "✧ | ᴅʀᴏᴡᴋɪᴅ | ✧" > ${SCPdir}/message.txt
  #  msg -verd "    $(source trans -b es:${id} "Ficheros Copiados"|sed -e 's/[^a-z -]//ig'): \e[97m[\e[93m@donpatobot_bot\e[97m]"
   wget -qO- ifconfig.me > /etc/VPS-MX/IP.log
-  userid="6234530051"
+#  userid=
+echo "6234530051" > ${SCPdir}/ID
+ userid="${SCPdir}/ID"
+]
 if [[ $(cat ${userid}|grep "6234530051") = "" ]]; then
 activ=$(cat ${userid})
 GEN="6786786975:AAFFDZGSYaSgD6MS3ZhwVul6Sibjr3VIY7M"
