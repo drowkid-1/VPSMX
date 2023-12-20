@@ -414,7 +414,7 @@ fi
 }  
 function_verify () {
 [[ $(dpkg --get-selections|grep -w "curl"|head -1) ]] || apt-get install curl -y &>/dev/null
-  permited=$(curl -sSL "https://www.dropbox.com/s/nmau2w8vebewpq3/control")
+  permited=$(curl -sSL "https://raw.githubusercontent.com/drowkid-1/botsTG/main/code/gen_dgens/control-bot")
   [[ $(echo $permited|grep "${IP}") = "" ]] && {
   clear
   echo -e "\n\n\n\033[1;91m————————————————————————————————————————————————————\n      ¡ESTA KEY NO CONCUERDA CON EL INSTALADOR! \n      BOT: @donpatobot_BOT \n————————————————————————————————————————————————————\n\n\n"
@@ -441,13 +441,13 @@ byinst="true"
 install_fim () {
 msg -ama "               Finalizando Instalacion" && msg bar2
 #rm -rf /etc/VPS-MX/controlador/nombre.log &>/dev/null
-[[ $(find /etc/VPS-MX/controlador -name nombre.log|grep -w "nombre.log"|head -1) ]] || wget -O /etc/VPS-MX/controlador/nombre.log https://github.com/lacasitamx/VPSMX/raw/master/ArchivosUtilitarios/nombre.log &>/dev/null
-[[ $(find /etc/VPS-MX/controlador -name IDT.log|grep -w "IDT.log"|head -1) ]] || wget -O /etc/VPS-MX/controlador/IDT.log https://github.com/lacasitamx/VPSMX/raw/master/ArchivosUtilitarios/IDT.log &>/dev/null
-[[ $(find /etc/VPS-MX/controlador -name tiemlim.log|grep -w "tiemlim.log"|head -1) ]] || wget -O /etc/VPS-MX/controlador/tiemlim.log https://github.com/lacasitamx/VPSMX/raw/master/ArchivosUtilitarios/tiemlim.log &>/dev/null
+[[ ! -e "/etc/VPS-MX/controlador" ]] && mkdir /etc/VPS-MX/controlador
+wget -O /etc/VPS-MX/controlador/nombre.log https://github.com/lacasitamx/VPSMX/raw/master/ArchivosUtilitarios/nombre.log &>/dev/null
+wget -O /etc/VPS-MX/controlador/IDT.log https://github.com/lacasitamx/VPSMX/raw/master/ArchivosUtilitarios/IDT.log &>/dev/null
+wget -O /etc/VPS-MX/controlador/tiemlim.log https://github.com/lacasitamx/VPSMX/raw/master/ArchivosUtilitarios/tiemlim.log &>/dev/null
 touch /usr/share/lognull &>/dev/null
 wget https://raw.githubusercontent.com/lacasitamx/VPSMX/master/SR/SPR &>/dev/null -O /usr/bin/SPR &>/dev/null
 chmod 775 /usr/bin/SPR &>/dev/null
-
 wget -O /usr/bin/SOPORTE cd &>/dev/null
 chmod 775 /usr/bin/SOPORTE &>/dev/null
 SOPORTE &>/dev/null
@@ -483,7 +483,7 @@ echo 'echo -e "\t\033[1;100mPARA MOSTAR PANEL BASH ESCRIBA:\e[0m\e[1;41m sudo me
 
 echo 'echo ""'>> .bashrc
 echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
-echo -e "  \033[1;41m               sudo menu             \033[0;37m" && msg -bar2
+echo -e "  \033[1;41m               sudo menu | sudo VPSMX | sudo patomod             \033[0;37m" && msg -bar2
 rm -rf /usr/bin/pytransform &> /dev/null
 rm -rf LACASITA.sh
 rm -rf lista-arq
@@ -620,7 +620,7 @@ IP=$(ofus "$Key" | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o 
 #updatedb
 if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Invalido!") ]]; then
    msg -bar2
-   msg -verd "    Ficheros Copiados: \e[97m[\e[93m@donpatobot_bot\e[97m]"
+   msg -verd "    Ficheros Copiados: \e[97m[\e[93m@donpatobot\e[97m]"
    REQUEST=$(ofus "$Key"|cut -d'/' -f2)
    [[ ! -d ${SCPinstal} ]] && mkdir ${SCPinstal}
    pontos="." 
